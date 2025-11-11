@@ -55,10 +55,21 @@ const authCheck = () => {
       }
   }
 
-  const handleLogout = () => {
+  const handlelogout = () => {
     localStorage.removeItem('token');
     setAuthenticated(false);
-    navigate('/login'); } if (!authenticated) { return ( <div className="container mx-auto px-4 py-8"> <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"> {Array.from({ length: 10 }).map((_, idx) => ( <div key={idx} className="bg-gray-200 animate-pulse rounded-lg border border-gray-300 shadow overflow-hidden my-4" > <div className="w-full h-48 bg-gray-300" />
+    navigate('/login');
+  }
+if (!authenticated) {
+  return (
+ <div className="container mx-auto px-4 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {Array.from({ length: 10 }).map((_, idx) => (
+        <div
+          key={idx}
+          className="bg-gray-200 animate-pulse rounded-lg border border-gray-300 shadow overflow-hidden my-4"
+        >
+          <div className="w-full h-48 bg-gray-300" />
           <div className="p-4">
             <div className="h-6 bg-gray-300 rounded w-3/4 mb-2" />
             <div className="h-4 bg-gray-300 rounded w-full" />
@@ -76,59 +87,85 @@ const authCheck = () => {
   return (
     
     <div className="min-h-screen bg-linear-to-r from-gray-300 via-cyan-50 to-red-200 flex flex-col">
-       <nav className="w-full fixed top-0 left-0 z-10 bg-gradient-to-r from-gray-400 via-pink-200 to-red-400 py-3 px-4 shadow-md">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-        {/* Logo Section */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-white/30 flex items-center justify-center shadow-sm">
-            <span className="text-white font-extrabold">Z</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-500">
-            Zippee
-          </h1>
-        </div>
+      <nav className="w-full fixed top-0 z-10 left-0 bg-linear-to-r from-gray-400 via-pink-200 to-red-400 py-3 px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+     
 
-        {/* Search & Logout Section */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-          {/* Search Box */}
-          <div className="flex items-center bg-white/30 rounded-md w-full sm:w-64 md:w-72 p-1">
-            <div className="p-2">
-              <svg
-                className="w-5 h-5 text-gray-700"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </div>
-            <input
-              id="search"
-              type="search"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search your fav..."
-              className="w-full bg-transparent text-gray-900 placeholder-gray-700 outline-none"
-            />
-          </div>
+        <div className="w-full sm:w-auto">
+        <div className="flex  ">
+     
+  
+            <nav className="w-full fixed top-0 left-0 z-10 bg-gradient-to-r from-gray-400 via-pink-200 to-red-400 py-3 px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+ 
+  <div className="flex items-center gap-3">
+    <div className="w-10 h-10 rounded-full bg-white/30 flex items-center justify-center shadow-sm">
+      <span className="text-white font-extrabold">Z</span>
+    </div>
+    <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-500">
+      Zippee
+    </h1>
+  </div>
 
-          {/* Logout Button */}
-          <button
-            onClick={handleLogout}
-            className="w-10 h-10 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition duration-300 shadow-md"
-          >
-            <LogOut size={20} />
-          </button>
-        </div>
+ 
+  <div className="flex flex-col sm:flex-row items-center w-full sm:w-auto gap-2 sm:gap-3 mt-2 sm:mt-0">
+    
+
+      <nav className="w-full fixed top-0 left-0 z-10 bg-gradient-to-r from-gray-400 via-pink-200 to-red-400 py-3 px-4 flex flex-col md:flex-row items-center justify-between gap-3">
+ 
+  <div className="flex items-center gap-3">
+    <div className="w-10 h-10 rounded-full bg-white/30 flex items-center justify-center shadow-sm">
+      <span className="text-white font-extrabold">Z</span>
+    </div>
+    <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-500">
+      Zippee
+    </h1>
+  </div>
+
+
+  <div className="flex  flex-row items-center w-full sm:w-auto gap-2 sm:gap-3 mt-2 sm:mt-0">
+
+    <div className="flex justify-between items-center w-full sm:w-auto gap-2">
+    <div className="flex gap-2">
+        <div className="w-10 h-10 rounded-full bg-white/30 flex items-center justify-center shadow-sm">
+        <svg
+          className="w-6 h-6 text-gray-100"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2.6"
+        >
+          <path strokeLinecap="round" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+        </svg>
       </div>
-    </nav>
+      <input
+        id="search"
+        type="search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search your fav..."
+        className="w-3/5 md:w-60 border border-gray-600 rounded-md py-2 px-3 text-gray-800 outline-none text-md"
+      />
+    </div>
+         <button
+      onClick={handlelogout}
+      className="flex items-center justify-center w-10 h-10 rounded-full bg-red-500 hover:cursor-pointer hover:bg-red-600  transition duration-300 text-white shadow-md"
+    >
+  <LogOut />
+    </button>
+    </div>
+ 
+  </div>
+</nav>
 
+    
+  </div>
+</nav>
+
+ 
+        </div>
+        </div>
+      </nav>
 
       <main className="flex-1 py-3 px-4 mt-22 mb-15 overflow-y-auto">
         <Cards searchQuery={search} page={page} />
