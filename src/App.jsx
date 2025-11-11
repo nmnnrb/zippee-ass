@@ -1,7 +1,6 @@
-import { useState } from "react";
+
 import "./App.css";
-import Cards from "./components/Cards.jsx";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import { HashRouter as Router, Routes, Route } from "react-router-dom"; 
 import Login from "./components/Login.jsx";
 import Data from "./components/Data.jsx";
 
